@@ -1,0 +1,24 @@
+def make_a_list(size):
+    list = []
+    for i in range(0, size):
+        list.append(int(input('Enter the value')))
+
+    return list
+
+def find_a_number(list, number, index, counter):
+    if index == len(list):
+        print(f'Number {number} occurred {counter} times')
+        return
+    if number == list[index]:
+        counter = counter + 1
+    find_a_number(list, number, index + 1, counter)
+
+
+
+
+
+
+if __name__ == '__main__':
+    list = make_a_list(int(input('Podaj rozmiar listy')))
+    print(list)
+    find_a_number(list, 5, 0, 0)
