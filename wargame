@@ -1,0 +1,29 @@
+def determine_the_winner(card1, card2):
+    card1 = input("First player card")
+    card2 = input("Second player card")
+    cards = {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "J": 11,
+        "D": 12,
+        "K": 13,
+        "A": 14
+    }
+
+    if cards[card1] > cards[card2]:
+        return f' The winner is player number {1}'
+    elif cards[card1] < cards[card2]:
+        return f' The winner is player number {2}'
+    else:
+        return 0
+
+if __name__ == "__main__":
+    print(determine_the_winner("card1", "card2"))
