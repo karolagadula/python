@@ -1,0 +1,22 @@
+
+import time
+
+from typing import Callable
+
+def czasomierz(func: Callable):
+    def time_inner(*args, **kwargs):
+        start = time.time()
+        ret_value = func(*args, **kwargs)
+        end = time.time()
+        print(end-start)
+        return ret_value
+    return time_inner
+
+@czasomierz
+def add(a, b):
+    time.sleep(1)
+    return a+b
+
+
+if __name__ == '__main__':
+    print(add(3, 5))
